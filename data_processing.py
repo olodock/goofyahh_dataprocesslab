@@ -68,3 +68,28 @@ def PTMTFATCII():
             temps.append(float(c['temperature']))
     print(max(temps))
 PTMTFATCII()
+
+students = [
+        {"name": "Alice", "score": 90},
+        {"name": "Bob", "score": 70},
+        {"name": "Charlie", "score": 85}]
+ 
+
+def filter_items(condition: function, dict_list: list):
+    filtered = []
+    for i in dict_list:
+        p = condition(i)
+        if p :
+            filtered.append(i)
+    print(filtered)
+
+filter_items(lambda s: s["score"] >= 85, students)
+
+
+def aggregate(aggregation_key, aggregation_function, dict_list):
+    temp = []
+    for i in dict_list:
+        temp.append(i[aggregation_key])
+    print(aggregation_function(temp))
+
+aggregate("score", max, students)
